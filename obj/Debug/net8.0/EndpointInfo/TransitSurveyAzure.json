@@ -1,0 +1,73 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "TransitSurveyAzure",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/SurveyResponses": {
+      "get": {
+        "tags": [
+          "SurveyResponses"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MetroResidentSurveyResponses"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MetroResidentSurveyResponses"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MetroResidentSurveyResponses"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "MetroResidentSurveyResponses": {
+        "type": "object",
+        "properties": {
+          "zipcode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "num_response": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pub_access": {
+            "type": "number",
+            "format": "double"
+          },
+          "com_not_car": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

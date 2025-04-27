@@ -1,0 +1,54 @@
+﻿@page
+@model IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MetroResidentSurveyResponses[0].zipcode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MetroResidentSurveyResponses[0].num_response)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MetroResidentSurveyResponses[0].pub_access)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MetroResidentSurveyResponses[0].com_not_car)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.MetroResidentSurveyResponses) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.zipcode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.num_response)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pub_access)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.com_not_car)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.zipcode">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.zipcode">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.zipcode">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

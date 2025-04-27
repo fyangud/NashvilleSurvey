@@ -1,0 +1,50 @@
+﻿@page
+@model TransitSurveyAzure.Pages.SurveyResponses.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>MetroResidentSurveyResponses</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+			<!--<input type="hidden" asp-for="MetroResidentSurveyResponses.zipcode" />-->
+            <div class="form-group">
+                <label asp-for="MetroResidentSurveyResponses.zipcode" class="control-label"></label>
+                <input asp-for="MetroResidentSurveyResponses.zipcode" class="form-control" />
+                <span asp-validation-for="MetroResidentSurveyResponses.zipcode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MetroResidentSurveyResponses.num_response" class="control-label"></label>
+                <input asp-for="MetroResidentSurveyResponses.num_response" class="form-control" />
+                <span asp-validation-for="MetroResidentSurveyResponses.num_response" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MetroResidentSurveyResponses.pub_access" class="control-label"></label>
+                <input asp-for="MetroResidentSurveyResponses.pub_access" class="form-control" />
+                <span asp-validation-for="MetroResidentSurveyResponses.pub_access" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MetroResidentSurveyResponses.com_not_car" class="control-label"></label>
+                <input asp-for="MetroResidentSurveyResponses.com_not_car" class="form-control" />
+                <span asp-validation-for="MetroResidentSurveyResponses.com_not_car" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
