@@ -10,7 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Retrieve Key Vault name from configuration (e.g., appsettings.json)
 var keyVaultName = builder.Configuration["KeyVault:Name"];
-var keyVaultUri = new Uri($"https://{keyVaultName}.vault.azure.net");
+var keyVaultUri = new Uri($"https://{keyVaultName}.vault.azure.net/");
 var client = new SecretClient(new Uri($"https://{keyVaultName}vault.azure.net/"), new DefaultAzureCredential());
 
 // Authenticate to Azure Key Vault using DefaultAzureCredential
